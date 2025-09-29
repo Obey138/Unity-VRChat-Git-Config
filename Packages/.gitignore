@@ -1,0 +1,14 @@
+# Uploading VRChat SDK anywhere on your own breaks VRChat's TOS
+com.vrchat.*/
+
+# Allow VPM Package Resolver Tool, which will download SDK for you
+!com.vrchat.core.*/
+
+# If VPM Package Resolver Tool is broken, comment line 2 to upload currently used VRChat SDK to your remote
+# THIS BREAKS VRCHAT TOS
+# USE ONLY IF NECESSARY
+# ONCE FIXED, IMMEDIATELY REVERT THIS FILE AND UNTRACK SDK FILES
+
+# VRChat Creator Companion might try to overwrite this file
+# If needed, mark it as read-only in OS
+

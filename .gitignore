@@ -1,4 +1,12 @@
-# ignore git config as it will be differ across clients
+# VRChat Creator Companion adds its own additional gitignore to /Packages, so you don't upload the SDK on your own
+#/[Pp]ackages/.gitignore
+# Uncomment to ignore it
+# UPLOADING VRCHAT SDK ANYWHERE ON YOUR OWN BREAKS VRCHAT TOS
+# REVERT IMMEDIATELY ONCE FIXED 
+# WORKAROUND for broken VPM Package Resolver Tool
+# Not recommended - edit it instead, unless you are also experiencing problems with Creator Companion
+
+# ignore git config as it will differ across clients
 .gitconfig
 
 # unity generated folders
@@ -39,6 +47,14 @@ AssetStoreTools.meta
 
 # Visual Studio cache directory
 .vs/
+
+# Visual Studio Code cache
+*.vscode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Rider
 **/.idea/**
@@ -100,6 +116,20 @@ sysinfo.txt
 *.apk.meta
 *.unitypackage
 *.unitypackage.meta
+
+# VRCFury temp files
+_VRCFury/
+**/com.vrcfury.temp/
+_VRCFury.meta
+VRCFury.zip
+
+# VRChat SDK upload temp files
+/[Aa]ssets/prefab-id-*.prefab
+/[Aa]ssets/prefab-id-*.prefab.meta
+
+# Recordings can get excessive in size
+/[Rr]ecordings/
+/[Rr]ecordings.meta
 
 # Crashlytics generated file
 crashlytics-build.properties
