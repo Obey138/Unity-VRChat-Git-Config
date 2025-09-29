@@ -1,32 +1,34 @@
-Based on [NYUGameCenter/Unity-Git-Config](https://github.com/NYUGameCenter/Unity-Git-Config) 
-This fork contains changes made to accommodate Unity projects made for VRChat user generated content, that use VRChat Creator Companion and VRChat SDK
-
-1. Create a project in Creator Companion or use an existing one
-2. Paste these files into the project folder
-3. Copy files from `/githooks` to `.git/hooks`
-4. Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)
-5. In Unity, open Project Settings
-6. Force visible .meta files    `Version Control / Mode: “Visible Meta Files”`
-7. Force text serialization    `Asset Serialization / Mode: “Force Text”`
-8. Save
-9. `git init`
-10. `git lfs install`
-    (LFS should be bundled with Git for Windows official installer. If this doesn't work, [install Git LFS first using official installer](https://git-lfs.com/))
-12. Make first commit
-13. Enjoy!
-
-> [!IMPORTANT]
-> When pushing a new project to remote for the first time, make sure remote is empty. Otherwise conflicts might occur
-
-I also recommend getting [spoiledcat/git-for-unity](https://github.com/spoiledcat/git-for-unity) for a git GUI inside Unity
-
-
-
-
-> [!WARNING]
-> Readme rework TODO
-> The rest of this file is unchanged from original repo
-
+Based on [NYUGameCenter/Unity-Git-Config](https://github.com/NYUGameCenter/Unity-Git-Config)  
+  
+This fork contains changes made to accommodate Unity projects made for VRChat user generated content, that use VRChat Creator Companion and VRChat SDK  
+  
+1. Create a project in Creator Companion or use an existing one  
+2. Paste these files into the project folder  
+3. Copy files from `/githooks` to `.git/hooks`  
+4. Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)  
+5. In Unity, open Project Settings  
+6. Force visible .meta files    `Version Control / Mode: “Visible Meta Files”`  
+7. Force text serialization    `Asset Serialization / Mode: “Force Text”`  
+8. Save  
+9. `git init`  
+10. `git lfs install`  
+    (LFS should be bundled with Git for Windows official installer. If this doesn't work, [install Git LFS first using official installer](https://git-lfs.com/))  
+12. Make first commit  
+13. Enjoy!  
+  
+> [!IMPORTANT]  
+> When pushing a newly git initiated project to remote for the first time, make sure remote is empty (no initial commit). Otherwise conflicts might occur  
+  
+I also recommend getting [spoiledcat/git-for-unity](https://github.com/spoiledcat/git-for-unity) for a git GUI inside Unity  
+  
+<br>  
+<br>  
+<br>  
+  
+> [!WARNING]  
+> Readme rework TODO  
+> The rest of this file is unchanged from original repo  
+  
 ## Configure Unity for Git
 
 1. Create a new unity project.
