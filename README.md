@@ -1,46 +1,31 @@
-<div style="align:center"><img src ="https://github.com/NYUGameCenter/Unity-Git-Config/blob/master/NYU_GameCenter_Logo_Formatted_Thin.png"></div>
+Based on [NYUGameCenter/Unity-Git-Config](https://github.com/NYUGameCenter/Unity-Git-Config) 
+This fork contains changes made to accommodate Unity projects made for VRChat user generated content, that use VRChat Creator Companion and VRChat SDK
 
-# Unity Github Config
-- [Git Primer](#git-primer)
-- [Setup Instructions](#setup-instructions)
-- [Usage and Errors](#usage-and-errors)
-- [Troubleshooting](#troubleshooting)
-- [Additional Information](#additional-information)
+1. Create a project in Creator Companion or use an existing one
+2. Paste these files into the project folder
+3. Copy files from `/githooks` to `.git/hooks`
+4. Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)
+5. In Unity, open Project Settings
+6. Force visible .meta files    `Version Control / Mode: “Visible Meta Files”`
+7. Force text serialization    `Asset Serialization / Mode: “Force Text”`
+8. Save
+9. `git init`
+10. `git lfs install`
+    (LFS should be bundled with Git for Windows official installer. If this doesn't work, [install Git LFS first using official installer](https://git-lfs.com/))
+12. Make first commit
+13. Enjoy!
 
-We've put together some git configuration files to cover the majority of Unity/Git use cases. If you set these up at the start, they should prevent your repos from filling up with cruft. These config files ensure that all large files are tracked by git lfs & that your changes are diff'd appropriately, while the pre-commit/post-merge hooks ensure that meta files stay properly in sync. They also insure you against accidentally trying to upload a >100mb file to github, and ending up with a sad unresolvable local repo.
+> [!IMPORTANT]
+> When pushing a new project to remote for the first time, make sure remote is empty. Otherwise conflicts might occur
 
-This process has 4 phases & some prequisites. Please make sure to complete all phases before starting work on your project.
+I also recommend getting [spoiledcat/git-for-unity](https://github.com/spoiledcat/git-for-unity) for a git GUI inside Unity
 
-  0. [Prerequisites](#prerequisites)
-  1. [Configure Unity for Git](#configure-unity-for-git)
-  2. [Create and Configure Your Repo](#create-and-configure-your-repo)
-  3. [Install GitLFS](#install-gitlfs)
-  4. [Invite Teammates](#invite-teammates)
 
-# Git Primer
 
-Want a primer on git?
 
- * [Git, the simple guide](http://rogerdudler.github.io/git-guide/) - A very simple primer
- * [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/) - A command-oriented, more extensive git primer
- * [Git on the Command Line](https://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html) - a command line git primer
- * [Swarthmore Git Intro](https://www.cs.swarthmore.edu/help/git/) - A more conceptually-driven git primer
- 
-How about a cheatsheet?
-
- * [Rogerdudler's Cheatsheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) - Just the essentials, one-pager
- * [GitHub's Cheatsheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) - More extensive, longer descriptions
- * [NDP's Cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html) - Interactive, even more extensive
-
-# Setup Instructions
-
-## Prerequisites
-
-Unity 2017 or newer. Tested up to Unity 2018.3.
-
-* Mac: Git installed either through Xcode command line tools, or from here: http://git-scm.com/download/mac
-* Windows: Git installed using GitForWindows: https://gitforwindows.org/ Note that other windows git installs that don't include gitbash will cause the pre-commit & post-merge hooks to fail, negating many of the key benefits of this setup.
-  
+> [!WARNING]
+> Readme rework TODO
+> The rest of this file is unchanged from original repo
 
 ## Configure Unity for Git
 
@@ -84,8 +69,6 @@ Unity 2017 or newer. Tested up to Unity 2018.3.
 
 6. Commit these changes to your new repo & push. Your new project should look like this on Github:
 
-<div style="align:center"><img src ="https://github.com/NYUGameCenter/Unity-Git-Config/blob/master/testproject.jpg"></div>
-(Keep scrolling, you're not done yet!)
 
 ## Install GitLFS 
 
@@ -97,7 +80,7 @@ Unity 2017 or newer. Tested up to Unity 2018.3.
 
 4. That's all you need to do, as tracking the appropriate files in lfs is taken care of by the .gitattributes file. If you're already familiar with git, you might consider reading [this intro to git-lfs](https://github.com/git-lfs/git-lfs/wiki/Tutorial), as working with it varies from vanilla git quite a bit.
 
-5. Download the [pre-commit](https://github.com/NYUGameCenter/Unity-Git-Config/blob/master/pre-commit) & [post-merge](https://github.com/NYUGameCenter/Unity-Git-Config/blob/master/post-merge) scripts. Enable them in your repo by moving them into the folder `<your_repo>/.git/hooks/`.  These will ensure that meta files stay in sync. It will also alert you if you attempt to commit a >100mb file, which github will reject. It will reject the commit, allowing you to revise it to remove or reduce the size of the offending file(s). **These scripts have to be installed individually on each computer you clone the repo to. Please ensure your teammates have installed these as well.**
+5. Download the pre-commit & post-merge scripts. Enable them in your repo by moving them into the folder `<your_repo>/.git/hooks/`.  These will ensure that meta files stay in sync. It will also alert you if you attempt to commit a >100mb file, which github will reject. It will reject the commit, allowing you to revise it to remove or reduce the size of the offending file(s). **These scripts have to be installed individually on each computer you clone the repo to. Please ensure your teammates have installed these as well.**
 
 6. On OSX, you must make these hooks executable by chmod +x. https://support.apple.com/guide/terminal/make-a-file-executable-apdd100908f-06b3-4e63-8a87-32e71241bab4/mac
 
