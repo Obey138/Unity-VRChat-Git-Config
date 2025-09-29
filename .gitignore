@@ -11,14 +11,23 @@
 
 # unity generated folders
 /[Ll]ibrary/
-/[Uu]serSettings/
+/[Uu]ser[Ss]ettings/
 [Tt]emp/
 [Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
-/[Mm]emoryCaptures/
 /[Bb]in/
+.utmp/
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
+/[Mm]emoryCaptures/
+/[Mm]emoryCaptures.meta
+
+# Recordings can get excessive in size
+/[Rr]ecordings/
+/[Rr]ecordings.meta
 
 # erroneous meta files 
 [Ll]ibrary.meta
@@ -29,21 +38,17 @@
 [Ll]ogs.meta
 [Bb]in.meta
 
-
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
 
-# Ignore Jetbrains Plugin
-Assets/Plugins/Editor/JetBrains.meta
-Assets/Plugins/Editor/JetBrains/*
-JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta
-assets/Plugins/Editor/JetBrains.meta
-assets/Plugins/Editor/JetBrains/*
+# Uncomment this line if you wish to ignore the asset store tools plugin
+# /[Aa]ssets/AssetStoreTools*
 
-# comment these out if you wish to commit the asset store tools plugins
-assets/AssetStoreTools*
-Assets/AssetStoreTools*
-AssetStoreTools.meta
+# Ignore Jetbrains Plugin
+/[Aa]ssets/Plugins/Editor/JetBrains*
+JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta
+# Jetbrains Rider personal-layer settings
+*.DotSettings.user
 
 # Visual Studio cache directory
 .vs/
@@ -116,6 +121,9 @@ sysinfo.txt
 *.apk.meta
 *.unitypackage
 *.unitypackage.meta
+*.app
+
+*.log
 
 # VRCFury temp files
 _VRCFury/
@@ -127,12 +135,30 @@ VRCFury.zip
 /[Aa]ssets/prefab-id-*.prefab
 /[Aa]ssets/prefab-id-*.prefab.meta
 
-# Recordings can get excessive in size
-/[Rr]ecordings/
-/[Rr]ecordings.meta
-
 # Crashlytics generated file
 crashlytics-build.properties
+
+# TestRunner generated files
+InitTestScene*.unity*
+
+# Addressables default ignores, before user customizations
+/ServerData
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+# By default, Addressables content builds will generate addressables_content_state.bin
+# files in platform-specific subfolders, for example:
+# /Assets/AddressableAssetsData/OSX/addressables_content_state.bin
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+# Visual Scripting auto-generated files
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+# Auto-generated scenes by play mode tests
+/[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 # Audio waveform preview files
 *.reapeaks
@@ -155,3 +181,5 @@ Thumbs.db
 Desktop.ini
 ehthumbs.db
 Local/*
+
+*_autosave_*.spp
