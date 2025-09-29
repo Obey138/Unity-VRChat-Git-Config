@@ -4,3 +4,6 @@
     [mergetool "unityyamlmerge"]
     trustExitCode = false
     cmd = '<path to UnityYAMLMerge>' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+# Default path on Windows: C:\Program Files\Unity\Hub\Editor\2022.3.6f1\Editor\Data\Tools\UnityYAMLMerge.exe
+# Change if you installed Unity elsewhere or if you are using different version
+# (you shouldn't be using any other version than the one stated in VRChat Creator Docs)
