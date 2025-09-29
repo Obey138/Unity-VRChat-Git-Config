@@ -11,14 +11,23 @@
 
 # unity generated folders
 /[Ll]ibrary/
+/[Ll]ibrary.meta
 /[Uu]ser[Ss]ettings/
+/[Uu]ser[Ss]ettings.meta
 [Tt]emp/
+[Tt]emp.meta
 [Oo]bj/
+[Oo]bj.meta
 /[Bb]uild/
+/[Bb]uild.meta
 /[Bb]uilds/
+/[Bb]uilds.meta
 /[Ll]ogs/
+/[Ll]ogs.meta
 /[Bb]in/
+/[Bb]in.meta
 .utmp/
+.utmp.meta
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -28,15 +37,6 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 /[Rr]ecordings.meta
-
-# erroneous meta files 
-[Ll]ibrary.meta
-[Tt]emp.meta
-[Oo]bj.meta
-[Bb]uild.meta
-[Bb]uilds.meta
-[Ll]ogs.meta
-[Bb]in.meta
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
