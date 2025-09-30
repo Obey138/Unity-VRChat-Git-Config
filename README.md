@@ -1,4 +1,5 @@
 Based on [NYUGameCenter/Unity-Git-Config](https://github.com/NYUGameCenter/Unity-Git-Config)  
+Contains changes from [TV4Fun's fork](https://github.com/TV4Fun/Unity-Git-Config)
   
 This fork contains changes made to accommodate Unity projects made for VRChat user generated content, that use VRChat Creator Companion and VRChat SDK  
   
