@@ -2,29 +2,47 @@ Based on [NYUGameCenter/Unity-Git-Config](https://github.com/NYUGameCenter/Unity
 Contains changes from [TV4Fun's fork](https://github.com/TV4Fun/Unity-Git-Config)
   
 This fork contains changes made to accommodate Unity projects made for VRChat user generated content, that use VRChat Creator Companion and VRChat SDK  
+
+> [!IMPORTANT]  
+> If you're using Git Large File Storage (LFS) for the first time on this machine and user account, `git lfs install` to initialize it  
+> This has to be done only once per user  
+> LFS should be bundled with Git for Windows official installer. If this command doesn't work, [install Git LFS using official installer](https://git-lfs.com/)  
+> If you're using a different git client, refer to its documentation on LFS  
+> If something is wrong, do not proceed! Otherwise you might cause damage to your repo  
   
+## Repo initialization  
+> [!WARNING]  
+> Before proceeding, make sure LFS is installed and initialized. See above  
 1. Create a project in Creator Companion or use an existing one  
-2. Paste these files into the project folder  
-3. Copy files from `/githooks` to `.git/hooks`  
-4. Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)  
-5. In Unity, open Project Settings  
-6. Force visible .meta files    `Version Control / Mode: “Visible Meta Files”`  
-7. Force text serialization    `Asset Serialization / Mode: “Force Text”`  
-8. Save  
-9. `git init`  
-10. `git lfs install`  
-    (LFS should be bundled with Git for Windows official installer. If this doesn't work, [install Git LFS first using official installer](https://git-lfs.com/))  
-12. Make first commit  
-13. Enjoy!  
+2. In Unity, open Project Settings  
+3. Force visible .meta files    `Version Control / Mode: “Visible Meta Files”`  
+4. Force text serialization    `Asset Serialization / Mode: “Force Text”`  
+5. Save  
+6. Paste these files into the project's main folder  
+7. Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)  
+8. `git init`  
+9. Copy files from `/githooks` to `.git/hooks`  
+10. Make first commit  
+11. Enjoy!  
   
 > [!IMPORTANT]  
-> When pushing a newly git initiated project to remote for the first time, make sure remote is empty (no initial commit). Otherwise conflicts might occur  
+> When pushing a newly git initiated project to remote for the first time, make sure that remote is empty (no initial commit) or that it only contains Readme. Otherwise conflicts might occur  
   
 I also recommend getting [spoiledcat/git-for-unity](https://github.com/spoiledcat/git-for-unity) for a git GUI inside Unity  
   
-<br>  
-<br>  
-<br>  
+## Repo cloning  
+Some of the steps above have to be redone every time the repo is cloned  
+> [!TIP]  
+> Let your collaborators know about this
+
+> [!WARNING]  
+> Before proceeding, make sure LFS is installed and initialized. See above  
+- Edit `.gitconfig` - provide path to UnityYAMLMerge (this depends on where Unity is installed on your machine)  
+- Copy files from `/githooks` to `.git/hooks`  
+  
+<br><br>  
+<br><br>  
+<br><br>  
   
 > [!WARNING]  
 > Readme rework TODO  
